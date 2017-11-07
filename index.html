@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+  <title>To week number and back again</title>
+  <script type="text/javascript" src="app.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div ng-app="">
+    <form>
+      <div class="form-group">
+        <div ng-controller="weekController">
+          <h1>To week number and back again</h1>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="weekNo">Week:</label>
+            <div class="col-sm-10">
+              <input type="text" id="weekNo" class="form-control input-lg" name="weekNo" ng-model="weekVm.weekNo" ng-change="updateWeek()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Dates in week</label>
+            <div class="col-sm-4">
+              <p class="form-control-static input-lg">{{weekVm.firstDayOfWeek}}</p>
+            </div>
+            <div class="col-sm-2">
+              <p class="form-control-static">-</p>
+            </div>
+            <div class="col-sm-4">
+              <p class="form-control-static input-lg">{{weekVm.lastDayOfWeek}}</p>
+            </div>
+          </div>
+          <hr/>
+          <div class="form-group">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="currentDate">Date:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-lg" id="currentDate" name="currentDate" ng-model="weekVm.currentDate" ng-change="updateDate()">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Week for date</label>
+              <div class="col-sm-4">
+                <p class="form-control-static input-lg">{{weekVm.calculatedWeekNo}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</body>
+
+</html>
