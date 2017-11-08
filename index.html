@@ -12,41 +12,50 @@
 </head>
 
 <body>
-  <div ng-app="">
+  <div ng-app="" class="container">
     <form>
       <div class="form-group">
         <div ng-controller="weekController">
-          <h1>To week number and back again</h1>
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="weekNo">Week:</label>
-            <div class="col-sm-10">
-              <input type="text" id="weekNo" class="form-control input-lg" name="weekNo" ng-model="weekVm.weekNo" ng-change="updateWeek()">
+          <div class="container">
+            <div class="jumbotron">
+              <h1>To week number and back again</h1>
+              <p>Helps me find out what week number a certain date is in</p>
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Dates in week</label>
-            <div class="col-sm-4">
-              <p class="form-control-static input-lg">{{weekVm.firstDayOfWeek}}</p>
-            </div>
-            <div class="col-sm-2">
-              <p class="form-control-static">-</p>
-            </div>
-            <div class="col-sm-4">
-              <p class="form-control-static input-lg">{{weekVm.lastDayOfWeek}}</p>
-            </div>
-          </div>
-          <hr/>
-          <div class="form-group">
+          <div class="container">
             <div class="form-group">
-              <label class="col-sm-2 control-label" for="currentDate">Date:</label>
+              <label class="col-sm-2 control-label" for="weekNo">Week:</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control input-lg" id="currentDate" name="currentDate" ng-model="weekVm.currentDate" ng-change="updateDate()">
+                <input type="text" id="weekNo" class="form-control input-lg" name="weekNo" ng-model="weekVm.weekNo" ng-change="updateWeek()">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-2 control-label">Week for date</label>
+              <label class="col-sm-2 control-label">Dates in week</label>
               <div class="col-sm-4">
-                <p class="form-control-static input-lg">{{weekVm.calculatedWeekNo}}</p>
+                <input type="text" class="text input-lg disable" value="{{weekVm.firstDayOfWeek}}">
+              </div>
+              <div class="col-sm-2">
+                <p class="form-control-static"> to </p>
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="text input-lg disable" value="{{weekVm.lastDayOfWeek}}">
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <hr/>
+            </div>
+            <div class="form-group">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="currentDate">Date:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-lg" id="currentDate" name="currentDate" ng-model="weekVm.currentDate" ng-change="updateDate()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Week for date</label>
+                <div class="col-sm-4">
+                  <input type="text" class="text input-lg disable" value="{{weekVm.calculatedWeekNo}}">
+                </div>
               </div>
             </div>
           </div>
